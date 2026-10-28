@@ -124,7 +124,7 @@ sudo dnf install -y python3.11
 ### 2.3 Get the code
 **Option A, Git:**
 ```bash
-git clone https://github.com/<YOUR-GITHUB-USERNAME>/cloudadhar-cloud-guardian.git
+git clone https://github.com/cloudadhar/cloudadhar-cloud-guardian.git
 cd cloudadhar-cloud-guardian
 ```
 **Option B, Upload:** GitHub → **Code** → **Download ZIP**. In CloudShell → **Actions** → **Upload file**. Then:
