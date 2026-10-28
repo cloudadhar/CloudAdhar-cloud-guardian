@@ -24,7 +24,7 @@
       "Effect": "Allow",
       "Action": "bedrock:InvokeModel",
       "Resource": [
-        "arn:aws:bedrock:*:*:inference-profile/us.amazon.nova-pro-v1:0",
+        "arn:aws:bedrock:*:*:inference-profile/*.amazon.nova-pro-v1:0",
         "arn:aws:bedrock:*::foundation-model/amazon.nova-pro-v1:0"
       ]
     },
@@ -32,7 +32,7 @@
       "Sid": "SendEmailReport",
       "Effect": "Allow",
       "Action": "sns:Publish",
-      "Resource": "arn:aws:sns:us-east-1:*:cloudadhar-guardian-alerts"
+      "Resource": "arn:aws:sns:*:*:cloudadhar-guardian-alerts"
     }
   ]
 }

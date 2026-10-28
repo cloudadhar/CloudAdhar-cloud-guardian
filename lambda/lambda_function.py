@@ -249,7 +249,9 @@ def run_all_checks() -> list:
 import json
 
 TOPIC_ARN = os.getenv("TOPIC_ARN", "")
-MODEL_ID = os.getenv("MODEL_ID", "us.amazon.nova-pro-v1:0")
+# Nova Pro is called through an inference profile named after your region group: us., eu. or apac.
+PROFILE = {"us": "us", "eu": "eu", "ap": "apac"}.get(REGION.split("-")[0], "us")
+MODEL_ID = os.getenv("MODEL_ID", f"{PROFILE}.amazon.nova-pro-v1:0")
 
 SUMMARY_PROMPT = """You are CloudAdhar Cloud Guardian. Below is a JSON list of AWS findings produced by code.
 Write a short, friendly summary for a beginner (max 120 words):

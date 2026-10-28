@@ -115,7 +115,7 @@ Full checklist: **[docs/PREREQUISITES.md](docs/PREREQUISITES.md)**
 ```bash
 python3 --version
 ```
-If it shows **3.9**, install 3.11:
+**3.10 or newer?** Skip to 2.3. If it shows **3.9**, install 3.11:
 ```bash
 sudo dnf install -y python3.11
 ```
@@ -127,14 +127,14 @@ sudo dnf install -y python3.11
 git clone https://github.com/cloudadhar/cloudadhar-cloud-guardian.git
 cd cloudadhar-cloud-guardian
 ```
-**Option B, Upload:** GitHub → **Code** → **Download ZIP**. In CloudShell → **Actions** → **Upload file**. Then:
+**Option B, Upload** (only if you didn't use Option A): GitHub → **Code** → **Download ZIP**. In CloudShell → **Actions** → **Upload file**. Then:
 ```bash
 unzip cloudadhar-cloud-guardian-main.zip && cd cloudadhar-cloud-guardian-main
 ```
 
 ### 2.4 Install
 ```bash
-python3.11 -m venv ~/venv        # or python3 if it's already 3.10+
+python3 -m venv ~/venv           # use python3.11 if you installed it in 2.2
 source ~/venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -371,6 +371,7 @@ After changing `solution/checks.py`, rebuild the Lambda file: `python scripts/bu
 | `ModuleNotFoundError: strands` | `source ~/venv/bin/activate` then `pip install -r requirements.txt` |
 | `bad interpreter` in a new CloudShell session | `sudo dnf install -y python3.11` again |
 | Bedrock `AccessDeniedException` | Region must be **us-east-1**; test the model in the Bedrock **Playground** |
+| `check_setup.py` says *"Check region is eu-west-1"* (or another region) | CloudShell uses the region selected in the Console. Switch to **us-east-1** and open CloudShell again (each region has its own CloudShell home folder, so clone and install again) |
 | `ThrottlingException` | Wait 30 seconds and retry (the whole class is calling Bedrock at once) |
 | A check returns `[]` | Correct if nothing is wrong! Otherwise, check you created resources in **us-east-1** |
 | Lambda: `Task timed out after 3.00 seconds` | Set **Timeout** to 1 minute (step 6.4) |

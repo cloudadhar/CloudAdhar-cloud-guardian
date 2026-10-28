@@ -10,8 +10,10 @@ It checks that your environment is ready for the workshop (CloudAdhar Cloud Guar
 import os
 import sys
 
-MODEL_ID = os.getenv("MODEL_ID", "us.amazon.nova-pro-v1:0")
 REGION = os.getenv("AWS_REGION", "us-east-1")
+# Nova Pro is called through an inference profile named after your region group: us., eu. or apac.
+PROFILE = {"us": "us", "eu": "eu", "ap": "apac"}.get(REGION.split("-")[0], "us")
+MODEL_ID = os.getenv("MODEL_ID", f"{PROFILE}.amazon.nova-pro-v1:0")
 ok = True
 
 
