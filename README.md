@@ -87,8 +87,7 @@ cloudadhar-cloud-guardian/
 ├── tests/                  <- offline tests with fake AWS
 ├── scripts/build_lambda.py
 └── docs/
-    ├── PREREQUISITES.md
-    └── INSTRUCTOR_NOTES.md
+    └── PREREQUISITES.md
 ```
 
 ---
