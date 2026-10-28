@@ -93,7 +93,7 @@ cloudadhar-cloud-guardian/
 
 ---
 
-## Part 1: Before the workshop (15 min, at home)
+## Part 1: Before the workshop.
 
 Full checklist: **[docs/PREREQUISITES.md](docs/PREREQUISITES.md)**
 
