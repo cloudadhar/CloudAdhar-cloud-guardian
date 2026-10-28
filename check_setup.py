@@ -50,7 +50,11 @@ try:
     reply = r["output"]["message"]["content"][0]["text"].strip()
     step(f"Bedrock model {MODEL_ID} replied: {reply!r}", True)
 except Exception as e:
-    step(f"Bedrock model {MODEL_ID}", False,
-         f"Check region is {REGION} and the model works in the Bedrock Playground ({type(e).__name__}: {e})")
+    if "per day" in str(e):
+        hint = (f"Your account's daily Bedrock token quota in {REGION} is used up. Try us-east-1, or "
+                "Service Quotas -> Amazon Bedrock -> search 'Nova Pro' -> Request increase")
+    else:
+        hint = f"Check region is {REGION} and the model works in the Bedrock Playground"
+    step(f"Bedrock model {MODEL_ID}", False, f"{hint} ({type(e).__name__}: {e})")
 
 print("\nAll good. You're ready for the workshop!" if ok else "\nFix the FAIL items above, then run this again.")

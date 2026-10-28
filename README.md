@@ -373,6 +373,7 @@ After changing `solution/checks.py`, rebuild the Lambda file: `python scripts/bu
 | Bedrock `AccessDeniedException` | Region must be **us-east-1**; test the model in the Bedrock **Playground** |
 | `check_setup.py` says *"Check region is eu-west-1"* (or another region) | CloudShell uses the region selected in the Console. Switch to **us-east-1** and open CloudShell again (each region has its own CloudShell home folder, so clone and install again) |
 | `ThrottlingException` | Wait 30 seconds and retry (the whole class is calling Bedrock at once) |
+| `ThrottlingException ... Too many tokens per day` | Your account's **daily** Bedrock quota is used up (common on new accounts). Waiting a few minutes won't help. Try **us-east-1**, or **Service Quotas** → **Amazon Bedrock** → search `Nova Pro` → **Request increase** |
 | A check returns `[]` | Correct if nothing is wrong! Otherwise, check you created resources in **us-east-1** |
 | Lambda: `Task timed out after 3.00 seconds` | Set **Timeout** to 1 minute (step 6.4) |
 | Lambda: `AccessDenied ... ec2:Describe...` | Inline policy missing. Redo step 6.5 |
