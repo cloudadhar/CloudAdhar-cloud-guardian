@@ -1,6 +1,6 @@
 # Before the Workshop: Prerequisites Checklist
 
-**Workshop:** CloudAdhar Cloud Guardian, build an AI agent that protects your AWS account
+**Workshop:** Build Your First AI Agent with Amazon Bedrock & Strands Agents (project: CloudAdhar Cloud Guardian)
 
 Please finish this **before** you arrive (about 15 minutes). If something fails, message the organiser before the workshop day.
 

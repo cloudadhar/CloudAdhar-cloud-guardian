@@ -1,6 +1,6 @@
-# CloudAdhar Cloud Guardian
+# Build Your First AI Agent with Amazon Bedrock & Strands Agents
 
-### Hands-on Workshop: Build an AI Agent that Protects Your AWS Account
+### Hands-on Workshop: CloudAdhar Cloud Guardian, an AI agent that protects your AWS account
 
 Starting with AWS? Your two biggest risks are **getting hacked** (an open port, a public bucket) and **getting a surprise bill** (forgotten resources).
 
@@ -87,7 +87,8 @@ cloudadhar-cloud-guardian/
 ├── tests/                  <- offline tests with fake AWS
 ├── scripts/build_lambda.py
 └── docs/
-    └── PREREQUISITES.md
+    ├── PREREQUISITES.md
+    └── INSTRUCTOR_NOTES.md
 ```
 
 ---
