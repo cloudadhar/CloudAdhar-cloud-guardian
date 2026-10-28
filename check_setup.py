@@ -51,8 +51,10 @@ try:
     step(f"Bedrock model {MODEL_ID} replied: {reply!r}", True)
 except Exception as e:
     if "per day" in str(e):
-        hint = (f"Your account's daily Bedrock token quota in {REGION} is used up. Try us-east-1, or "
-                "Service Quotas -> Amazon Bedrock -> search 'Nova Pro' -> Request increase")
+        hint = (f"Your account's daily Bedrock token quota in {REGION} is used up. "
+                + ("Try us-east-1, or " if REGION != "us-east-1" else "")
+                + "Service Quotas -> Amazon Bedrock -> search 'Nova Pro' -> Request increase, "
+                "or open an AWS Support case (Service limit increase -> Bedrock)")
     else:
         hint = f"Check region is {REGION} and the model works in the Bedrock Playground"
     step(f"Bedrock model {MODEL_ID}", False, f"{hint} ({type(e).__name__}: {e})")
